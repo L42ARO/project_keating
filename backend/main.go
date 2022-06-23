@@ -1,31 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-	"os"
-
 	"keating/pkg/routes"
 
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := mux.NewRouter()
+	gin.SetMode(gin.ReleaseMode) ///We're not actually in release mode but just to stop the stupid warning from showing up
+	r := gin.Default()           //already returns a pointer
 	routes.RegisterRoutes(r)
-	http.Handle("/", r)
-	port := GetPort()
-	fmt.Printf("SERVER on Port %s\n", port)
-	log.Fatalln(http.ListenAndServe(port, r))
+	r.Run()
 
-}
-
-func GetPort() string {
-	var port = os.Getenv("PORT")
-	if port == "" {
-		port = "3000"
-		fmt.Println("Defaulting to port :" + port)
-	}
-	return ":" + port
 }

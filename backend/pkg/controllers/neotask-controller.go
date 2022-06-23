@@ -1,23 +1,24 @@
 package controllers
 
 import (
-	"encoding/json"
 	"keating/pkg/config"
 	"keating/pkg/models"
-	"keating/pkg/utils"
+	"log"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-func CreateNeotaskHandler(w http.ResponseWriter, r *http.Request) {
-	utils.SetHeaderJSON(&w)
-	newNeotask := &models.Neotask{}
-	utils.ParseBody(r, newNeotask)
-	err := newNeotask.CreateNeotask()
-	if err == config.ErrExists {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Write([]byte(err.Error()))
+func CreateNeotaskHandler(c *gin.Context) {
+	newNeoTask := &models.Neotask{}
+	if err := c.BindJSON(newNeoTask); err != nil {
+		c.JSON(http.StatusInternalServerError, err.Error())
+		log.Println("Error binding to json: ", err)
 		return
 	}
-	res, _ := json.Marshal(newNeotask)
-	w.Write(res)
+	if err := newNeoTask.CreateNeotask(); err == config.ErrExists {
+		c.JSON(http.StatusBadRequest, err.Error())
+		return
+	}
+	c.JSON(http.StatusOK, newNeoTask)
 }
