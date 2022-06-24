@@ -12,13 +12,15 @@ import (
 func CreateNeotaskHandler(c *gin.Context) {
 	newNeoTask := &models.Neotask{}
 	if err := c.BindJSON(newNeoTask); err != nil {
-		c.JSON(http.StatusInternalServerError, err.Error())
-		log.Println("Error binding to json: ", err)
-		return
+		log.Fatal("Error binding to json: ", err)
 	}
 	if err := newNeoTask.CreateNeotask(); err == config.ErrExists {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
 	}
 	c.JSON(http.StatusOK, newNeoTask)
+}
+func GetNeotasksHandler(c *gin.Context) {
+	neotasks := models.GetAllNeotasks()
+	c.JSON(http.StatusOK, neotasks)
 }

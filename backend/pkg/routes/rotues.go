@@ -9,4 +9,5 @@ import (
 func RegisterRoutes(r *gin.Engine) {
 	r.GET("/year", controllers.BasicHandler)
 	r.POST("/create-neotask", controllers.CreateNeotaskHandler)
+	r.GET("/get-neotasks", controllers.GetNeotasksHandler)
 }

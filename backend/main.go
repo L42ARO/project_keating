@@ -1,14 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"keating/pkg/routes"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	gin.SetMode(gin.ReleaseMode) ///We're not actually in release mode but just to stop the stupid warning from showing up
-	r := gin.Default()           //already returns a pointer
+	r := gin.Default() //NOTE: already returns a pointer
+	fmt.Println("STARTING server")
 	routes.RegisterRoutes(r)
 	r.Run()
 

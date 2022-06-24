@@ -19,9 +19,9 @@ func ParseBody(r *http.Request, x interface{}) {
 		}
 	}
 }
-func GetNonEmptyFields(s *interface{}) ([]string, []interface{}) {
-	fields := reflect.TypeOf(*s)
-	values := reflect.ValueOf(*s)
+func GetNonEmptyFields(s interface{}) ([]string, []interface{}) {
+	fields := reflect.TypeOf(s)
+	values := reflect.ValueOf(s)
 	nonEmptyFields := []string{}
 	nonEmptyValues := []interface{}{}
 	for i := 0; i < fields.NumField(); i++ {
