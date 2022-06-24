@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//ADDED GIT TO BACKEND
 func main() {
 	r := gin.Default() //NOTE: already returns a pointer
 	fmt.Println("STARTING server")
