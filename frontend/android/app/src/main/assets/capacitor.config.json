@@ -1,0 +1,6 @@
+{
+	"appId": "com.fldsmdfr.karpiem",
+	"appName": "frontend",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
