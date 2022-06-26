@@ -1,6 +1,6 @@
 import { IonList } from "@ionic/react";
 import React, { ReactNode } from "react";
-import '../theme/tailwind.css';
+import "../theme/tailwind.css";
 const Sidebar: React.FC = () => {
   return (
     <div
@@ -8,17 +8,13 @@ const Sidebar: React.FC = () => {
         flex flex-col
         bg-gray-900 text-white shadow"
     >
-      <i>A</i>
-      <i>B</i>
-      <i>C</i>
-      <i>D</i>
-      <i>E</i>
+      <SidebarIcon icon={<FaFire size="28" />} />
+      <SidebarIcon icon={<BsPlus size="32" />} />
+      <SidebarIcon icon={<BsFillLightningFill size="20" />} />
     </div>
   );
 };
-const SidebarIcon: React.FC <{icon:ReactNode}>=props=>(
-    <div className='sidebar-icon'>
-        {props.icon}
-    </div>
+const SidebarIcon: React.FC<{ icon: ReactNode }> = (props) => (
+  <div className="sidebar-icon">{props.icon}</div>
 );
 export default Sidebar;
