@@ -1,4 +1,6 @@
 import { IonList } from "@ionic/react";
+import { FaFire } from 'react-icons/fa';
+import { BsFillLightningFill, BsPlus } from 'react-icons/bs';
 import React, { ReactNode } from "react";
 import "../theme/tailwind.css";
 const Sidebar: React.FC = () => {
