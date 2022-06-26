@@ -21,7 +21,7 @@ import "./theme/variables.css";
 /* Components */
 import CreateNT from "./pages/CreateNT";
 import Home from './pages/TailwindTest'
-import Sidebar from "./pages/Sidebar";
+import Sidebar from "./components/Sidebar";
 
 setupIonicReact();
 
