@@ -1,5 +1,5 @@
 import { IonList } from "@ionic/react";
-import React from "react";
+import React, { ReactNode } from "react";
 import '../theme/tailwind.css';
 const Sidebar: React.FC = () => {
   return (
@@ -16,9 +16,9 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
-const SidebarIcon: React.FC =(icon)=>(
+const SidebarIcon: React.FC <{icon:ReactNode}>=props=>(
     <div className='sidebar-icon'>
-        
+        {props.icon}
     </div>
 );
 export default Sidebar;
