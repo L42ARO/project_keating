@@ -1,4 +1,4 @@
-import { IonApp, IonContent, IonHeader, IonItem, IonTitle, IonToolbar, setupIonicReact } from "@ionic/react";
+import { IonApp, IonContent, IonHeader, setupIonicReact } from "@ionic/react";
 import React from "react";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -17,27 +17,30 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 
 /* Theme variables */
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./components/Routes";
+import TopBar from "./components/TopBar";
+import "./theme/tailwind.css";
 import "./theme/variables.css";
 /* Components */
-import CreateNT from "./pages/CreateNT";
-import Home from './pages/TailwindTest'
-import Sidebar from "./components/Sidebar";
 
 setupIonicReact();
 
 const App: React.FC = () => {
   return (
     <IonApp>
-      <Sidebar />
-      <IonHeader>
-        {/* <IonToolbar color="primary">
-          <IonTitle>Karpiem</IonTitle>
-        </IonToolbar> */}
-      </IonHeader>
-      <IonContent className="ion-padding">
-        <Sidebar />
-        <CreateNT />
-      </IonContent>
+      <div className="h-full w-full">
+        <Router>
+          <IonHeader mode="ios">
+          <TopBar />
+          </IonHeader>
+          <IonContent>
+            <div className="pt-3 px-1 pb-0 h-full w-full">
+              <Routes />
+            </div>
+          </IonContent>
+        </Router>
+      </div>
     </IonApp>
   );
 };

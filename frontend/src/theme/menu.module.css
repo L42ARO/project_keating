@@ -1,0 +1,6 @@
+ion-menu::part(container){
+    width: 50%;
+}
+ion-menu::part(backdrop){
+    width: 0%;
+}

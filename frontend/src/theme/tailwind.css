@@ -4,8 +4,44 @@
 
 @layer components {
     .sidebar-icon{
-        @apply relative flex items-center justify-center
-                h-12 w-12;
+        @apply relative flex items-center justify-center;
+        @apply h-12 w-12 mt-12 mb-2 mx-auto shadow-lg;
+        @apply bg-gray-800 text-green-500;
+        @apply hover:bg-green-600 hover:text-white;
+        @apply rounded-3xl hover:rounded-xl;
+        @apply transition-all duration-300 ease-linear;
 
+    }
+    .wheelbar-icon{
+        @apply absolute flex items-center justify-center;
+        @apply aspect-square shadow-lg;
+        @apply bg-gray-800 text-green-500;
+        @apply hover:bg-green-600 hover:text-white;
+        @apply rounded-3xl hover:rounded-xl;
+        @apply transition-all duration-300 ease-linear origin-top-right;
+
+    }
+    
+    .sidebar-tooltip{
+        @apply absolute w-auto p-2 m-2 sm:m-4 left-14;
+        @apply rounded-md shadow-md;
+        @apply text-white bg-gray-900;
+        @apply text-base sm-a:text-xs md-a:text-sm font-bold;
+        @apply transition-all duration-100 origin-left;
+    }
+    .nt-clock{
+        @apply flex justify-center items-center flex-col;
+        @apply sm:w-40 w-36 aspect-square;
+        @apply bg-indigo-700;
+        @apply rounded-full;
+        @apply active:bg-indigo-800;
+    }
+    .toolwheel{
+        @apply top-0 left-0 p-3;
+        @apply fixed flex items-center w-full;
+        @apply transition-all duration-100 origin-top-right;
+    }
+    .icons-hide{
+        @apply scale-0 right-[9rem] md:right-[15rem];
     }
 }
