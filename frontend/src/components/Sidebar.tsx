@@ -1,18 +1,13 @@
 import {
   IonContent,
-  IonHeader,
-  IonList,
-  IonMenu,
-  IonRouterOutlet,
-  IonTitle,
-  IonToolbar,
+  IonHeader, IonToolbar
 } from "@ionic/react";
-import { FaFire } from "react-icons/fa";
-import { BsFillLightningFill, BsPlus } from "react-icons/bs";
 import React, { ReactNode } from "react";
+import { BsFillLightningFill, BsPlus } from "react-icons/bs";
+import { FaFire } from "react-icons/fa";
+import "../theme/menu.module.css";
 import "../theme/tailwind.css";
 import "../theme/variables.css";
-import "../theme/menu.module.css";
 const Sidebar: React.FC = () => {
   return (
     <React.Fragment>

@@ -38,12 +38,12 @@ const ToolWheel: React.FC<{}> = (props) => {
   };
   return (
     <React.Fragment>
-      <div
-        className={"z-[999]"+
-          (open ? " fixed w-full h-full backdrop-blur-sm bg-black opacity-75 left-0 top-0" : "scale-0")
-        }
-      ></div>
-
+      {open&&<div
+        className="z-[999] fixed w-full h-full backdrop-blur left-0 top-0"
+        onClick={()=>{setOpen(false)}}
+      >
+        <div className="w-full h-full bg-gray-500 opacity-50"></div>
+      </div>}
       <div className={open ? "w-12 aspect-square relative" : "scale-0"}></div>
       <div className={"z-[1000] h-full " + (open ? "toolwheel" : "w-auto")}>
         <div className="relative h-12 aspect-square">
@@ -99,7 +99,7 @@ const MainIcon: React.FC<{
   onClick: () => void;
 }> = ({ icon, text = "menu", onClick }) => (
   <div
-    className="wheelbar-icon group h-12"
+    className="wheelbar-icon text-theme group h-12"
     onClick={(e) => {
       onClick();
     }}
@@ -117,7 +117,7 @@ const SidebarIcon: React.FC<{
 }> = ({ icon, text = "hello", pos, onClick, bgSize="sm-a:h-12 h-16"}) => (
   <Link
     to={"/" + text}
-    className={"wheelbar-icon "+bgSize+" " + pos}
+    className={"wheelbar-icon text-theme "+bgSize+" " + pos}
     onClick={(e) => {
       onClick();
     }}

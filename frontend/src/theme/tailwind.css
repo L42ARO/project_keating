@@ -15,30 +15,32 @@
     .wheelbar-icon{
         @apply absolute flex items-center justify-center;
         @apply aspect-square shadow-lg;
-        @apply bg-gray-800 text-green-500;
-        @apply hover:bg-green-600 hover:text-white;
+        @apply dark:bg-gray-900 bg-gray-900;
+        @apply active:bg-green-600 active:text-white;
         @apply rounded-3xl hover:rounded-xl;
         @apply transition-all duration-300 ease-linear origin-top-right;
 
     }
-    
+    .text-theme{
+        @apply dark:text-green-500 text-indigo-600;
+    }
     .sidebar-tooltip{
         @apply absolute w-auto p-2 m-2 sm:m-4 left-14;
         @apply rounded-md shadow-md;
-        @apply text-white bg-gray-900;
+        @apply text-white bg-gray-800;
         @apply text-base sm-a:text-xs md-a:text-sm font-bold;
         @apply transition-all duration-100 origin-left;
     }
     .nt-clock{
         @apply flex justify-center items-center flex-col;
         @apply sm:w-40 w-36 aspect-square;
-        @apply bg-indigo-700;
+        @apply dark:bg-indigo-700 bg-green-500;
         @apply rounded-full;
         @apply active:bg-indigo-800;
     }
     .toolwheel{
         @apply top-0 left-0 p-3;
-        @apply fixed flex items-center w-full;
+        @apply fixed flex items-center;
         @apply transition-all duration-100 origin-top-right;
     }
     .icons-hide{

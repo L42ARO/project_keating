@@ -1,19 +1,10 @@
-import React, { useRef, useState } from "react";
 import {
-  IonAlert,
-  IonApp,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonHeader,
-  IonInput,
+  IonAlert, IonCol, IonGrid, IonInput,
   IonItem,
   IonLabel,
-  IonRow,
-  IonTitle,
-  IonToolbar,
-  setupIonicReact,
+  IonRow, setupIonicReact
 } from "@ionic/react";
+import React, { useRef, useState } from "react";
 
 /* Theme variables */
 import "../theme/variables.css";

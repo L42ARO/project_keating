@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Calendar from "../pages/Calendar";
 import Clocks from "../pages/Clocks";
 import CreateNT from "../pages/CreateNT";

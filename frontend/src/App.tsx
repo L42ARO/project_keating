@@ -29,18 +29,16 @@ setupIonicReact();
 const App: React.FC = () => {
   return (
     <IonApp>
-      <div className="h-full w-full">
         <Router>
           <IonHeader mode="ios">
           <TopBar />
           </IonHeader>
           <IonContent>
-            <div className="pt-3 px-1 pb-0 h-full w-full">
+            <div className="pt-3 px-1 pb-0 w-full">
               <Routes />
             </div>
           </IonContent>
         </Router>
-      </div>
     </IonApp>
   );
 };

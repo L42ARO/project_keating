@@ -1,8 +1,8 @@
 /* Theme variables */
 import '../theme/variables.css';
 /* Tailwind styles */
+import { IonContent, IonPage } from '@ionic/react';
 import '../theme/tailwind.css';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
 
 const Home: React.FC = () => {
     return (

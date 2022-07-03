@@ -11,6 +11,7 @@
     "@capacitor/status-bar": "^1.0.8",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
@@ -48,7 +49,7 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "deploy-test": "ionic build & netlify deploy --dir=build",
-    "deploy-prod": "ionic build --prod & netlify deploy --prod --dir=build"
+    "deploy-prod": "ionic build & netlify deploy --prod --dir=build"
   },
   "eslintConfig": {
     "extends": [
